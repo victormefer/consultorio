@@ -6,6 +6,7 @@
 using namespace std;
 
 //Implementação dos construtores
+//Não estão compilando
 
 Pessoa::Pessoa(string name) {
     nome = name;
