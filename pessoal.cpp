@@ -5,23 +5,6 @@
 
 using namespace std;
 
-//Implementação dos construtores
-//Não estão compilando
-
-Pessoa::Pessoa(string name) {
-    nome = name;
-}
-
-Medico::Medico(string esp) {
-    especialidade = esp;
-}
-
-Paciente::Paciente(int age, string adress, string phone) {
-    idade = age;
-    endereco = adress;
-    telefone = phone;
-}
-
 //Implementação dos métodos da classe Pessoa
 string Pessoa::getName() {
     return nome;
