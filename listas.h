@@ -1,12 +1,12 @@
-/*
- * File:   Listas.h
- * Author: Rafael Penna
+/* 
+ * File:   listas.h
+ * Author: Victor
  *
- * Created on 12 de Dezembro de 2012, 17:19
+ * Created on 14 de Dezembro de 2012, 13:19
  */
 
 #ifndef LISTAS_H
-#define  LISTAS_H
+#define    LISTAS_H
 
 #include <iostream>
 #include <string>
@@ -56,21 +56,46 @@ class Lista{
                 novo->prox = NULL;
             }
         }
+        
         No <tipo> recupera(No <tipo> *recuperado) {
             No <tipo> *busca = inicio;
             while (busca != NULL) {
                 if(busca->info == recuperado->info) {
                     return busca;
                 }
-                return NULL;
+                busca = busca->prox;
             }
+            cout << "Elemento não encontrado na lista" << endl;
+            return NULL;
         }
+        
         int listaVazia() {
             if(inicio == NULL) {
                 return 1;
             }
         return 0;
         }
+        
+        void remove(No <tipo> *remocao) {
+            No <tipo> *busca = inicio;
+            No <tipo> *anterior = NULL;
+            
+            while (busca != NULL) {
+                if(busca->info == remocao->info) {
+                    if (anterior != NULL)
+                        anterior->prox = busca->prox;
+                    else
+                        inicio = busca->prox;
+                    delete busca;
+                }
+                anterior = busca;
+                busca = busca->prox;
+            }
+            if (busca == NULL)
+                cout << "Elemento não encontrado na lista" << endl;
+        }
+        
 };
 
 #endif	/* LISTAS_H */
+
