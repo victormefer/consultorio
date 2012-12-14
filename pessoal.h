@@ -32,4 +32,6 @@ public:
     string getPhone();
 };
 
+//oi
+
 #endif	/* PESSOAL_H */
